@@ -1,3 +1,6 @@
+# Converting Xenium Ranger polygons to GeoJSON
+# Written by Dr Rodrigo Kazu @ JCK lab - University of Sheffield
+
 import pandas as pd
 import geojson
 

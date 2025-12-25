@@ -1,14 +1,18 @@
+# Simplifying Xenium Ranger polygons
+# Written by Dr Rodrigo Kazu @ JCK lab - University of Sheffield
+
 import pandas as pd
 import geojson
 from shapely.geometry import Polygon
 
+
+BASE = r"C:\Users\md1rss\Dropbox\NeuralPathways\Current_projects"
+r"\Cooper-Knock_lab\Analysis_2025\Spatial"
+r"\ALS2_SD01915_BG__largecells_reseg_20251215_064234_job49421202_4"
+r"\outs"
+
 # === INPUT ===
-cell_boundaries_path = (
-    r"C:\Users\md1rss\Dropbox\NeuralPathways\Current_projects"
-    r"\Cooper-Knock_lab\Analysis_2025\Spatial"
-    r"\ALS2_SD01915_BG__largecells_reseg_20251215_064234_job49421202_4"
-    r"\outs\cell_boundaries.parquet"
-)
+cell_boundaries_path = (BASE+"cell_boundaries.parquet")
 
 # === OUTPUT ===
 output_geojson = "ranger_cells_simplified.geojson"
