@@ -1,0 +1,22 @@
+name: 
+channels:
+  - conda-forge
+dependencies:
+  - geopandas
+  - glpk>=5
+  - igraph>=0.10
+  - imagecodecs
+  - ipykernel
+  - matplotlib
+  - numpy
+  - pandas
+  - python=3.11
+  - python-igraph>=0.10
+  - scanpy
+  - scikit-misc
+  - spatialdata
+  - spatialdata-io
+  - squidpy
+  - tifffile
+  - xarray
+

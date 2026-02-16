@@ -1,0 +1,28 @@
+name: 
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - anndata
+  - cudatoolkit=11.7
+  - cupy
+  - ipykernel
+  - ipython
+  - jupyter_client
+  - jupyter_core
+  - matplotlib
+  - numpy
+  - pip
+  - python=3.10
+  - pytorch=1.13
+  - pyzmq
+  - scanpy
+  - scikit-learn
+  - scikit-misc
+  - scipy
+  - torchaudio
+  - torchvision
+  - traitlets
+  - pip:
+    - DOTpy==1.0.0
+
