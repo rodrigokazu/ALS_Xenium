@@ -11,7 +11,7 @@
 # the logic reviewable.
 #
 # This is the _gausss generation of the concatenation, so it is the direct ancestor of
-# pipeline_final/VH_concatenate_FINAL.py, which ports its logic one to one. The gates, the
+# ck_spatial_pipeline/0_cohort_build/VH_concatenate_FINAL.py, which ports its logic one to one. The gates, the
 # prints, the grid offset and the h5py sanitisation all originate here.
 #
 # MN_LABEL_SPEC is pinned to MN_motorneuron with 'yes' as the positive value, and it has to be

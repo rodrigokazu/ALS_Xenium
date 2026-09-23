@@ -10,65 +10,40 @@ pipeline, and what has gone wrong with it before. Read those before running anyt
 
 ## Where to start
 
-`pipeline_final/` is the current pipeline. Everything else is either a separate lineage, a
-retained predecessor, or dead. The submission graph is `pipeline_final/SUBMIT_ALL_FINAL.sh`
-and the launch procedure is `docs/runbook_final_rerun.md`.
+`ck_spatial_pipeline/` is the current pipeline, grouped by tool: Novae, QC, cell annotation,
+NicheCompass and COZI. Its README gives the run in the order it happened, the canonical
+object on OAK and the deploy procedure. Everything outside it is a separate lineage, input
+data preparation or history.
 
 ## Layout
 
 | Directory | What it holds |
 |---|---|
-| `pipeline_final/` | The current end-to-end run on Marcel's `_final` segmentation. 53 scripts. |
-| `pipeline_gausss/` | The previous generation, kept only where nothing in `pipeline_final` replaced it. |
+| `ck_spatial_pipeline/` | The current pipeline from the `_final` segmentation to the 965,285-cell NicheCompass object. |
 | `segmentation/` | Xenium Ranger re-segmentation with large-cell recovery. |
 | `deconvolution/` | DOTpy cell type deconvolution against the Japanese spinal cord atlas. |
-| `cell_annotation/` | Leiden clustering plus first-pass cell typing through cell-annotator and Claude. |
-| `qc_clustering/` | Standalone scanpy QC, clustering, and the atlas-scale embedding parameter sweep. |
-| `notebooks/` | The MN-corrected concatenation and gene-comparison notebooks, their builders, and older notebooks. |
-| `superseded/` | Hybrid segmentation, Segger-era exports, and the first Novae run. History, not tooling. |
-| `envs/` | Conda and venv specifications. |
+| `notebooks/` | The MN-corrected concatenation and gene-comparison notebooks with their builders, and the DOTpy label-transfer notebook. |
+| `envs/` | Conda and venv specifications. The NicheCompass and COZI env builders sit with their tools. |
 | `docs/` | Launch runbook and the cohort ground truth table. |
+| `archive/` | The `_gausss` generation, hybrid segmentation, the first Novae run, the standalone clustering sweep, the CellAnnotator prototype and old notebooks. History, not tooling. |
 
-## Pipeline order
+## Why the tool folders are not the deployment layout
 
-Segmentation produces the Xenium bundles. `VH_concatenate_FINAL.py` turns twenty of them into
-one pre-QC object of roughly 1.85 million cells. From there four branches run in parallel:
-the joint Novae fit for comparable spatial domains, the independent per-sample Novae fit for
-QC, astrocyte isolation, and coarse cell typing. Overlays and gene co-localisation hang off
-the joint fit; the dual-pass QC hangs off the independent fit plus cell typing. Reports and
-audio editions come last.
-
-Two Novae runs exist because they answer opposite questions. The joint model makes domain
-labels mean the same thing in every section, so it is the one to use for composition. The
-independent model gives each section its own labels, and that is what makes segmentation
-smear show up as its own domain instead of being averaged away.
-
-## Why `pipeline_final/` is flat
-
-Twenty-five of those scripts do `sys.path.insert(0, HERE)` and then import siblings by bare
-name (`final_config`, `nature_style`, `dpqc_style_FINAL`). Sorting them into stage
-subdirectories would break every one of them at runtime, on a cluster, hours into a job. The
-directory mirrors its deployment layout on purpose. `pipeline_final/README.md` groups the
-files by stage so you can still find things.
+On SCG the scripts run from flat folders and many import siblings by bare name
+(`final_config`, `nature_style`, `dpqc_style_FINAL`). The repo groups them by tool for
+reading. `ck_spatial_pipeline/deploy/manifest.tsv` maps every file back to the SCG folder it
+runs from, and `deploy.sh` copies them there. Do not run scripts from inside the repo tree.
 
 ## This is a mirror, not a runnable tree
 
-The code runs on Stanford SCG from
-`/oak/stanford/scg/lab_mpsnyder/johnck/Projects/RK/Spatial/final_rerun_code/`, and the paths
-inside the scripts are absolute SCG paths. Cloning this repo does not give you a working
-pipeline; it gives you the code and the reasoning. Deploy by copying `pipeline_final/` to that
-directory.
+The paths inside the scripts are absolute SCG paths. Cloning this repo does not give you a
+working pipeline. It gives you the code and the reasoning.
 
 ## Current state
 
-The domains half of the pipeline was launched on 2026-07-22 as jobs 52199989 to 52200003. The
-concat completed cleanly at 1,854,568 cells across 20 samples with a 1.0 matrix-to-cells join
-overlap on every sample.
-
-Motor neuron annotation on `_final` is still pending. Marcel has delivered a neuron versus
-non-neuron classifier but not the motor neuron stage, so `is_MN` is False everywhere and every
-MN-dependent output degrades to an honest placeholder. `check_annotation_ready.sh` gates the
-full launch and currently exits 1.
+The canonical object is `NicheCompass_SC/runs_v3_noN3/NC_v3_Leiden_nichev2sub.h5ad` on OAK,
+965,285 cells after dual-pass QC and the September niche drop, with `cell_type_v2`,
+`niche_v2` and the ventral-horn v2 motor-neuron call `is_MN_v2` (844 cells).
 
 ## Things that will bite you
 
@@ -103,7 +78,7 @@ OME-TIFFs live. Deleting either breaks every overlay and hero figure.
 
 ## Environments
 
-`envs/` holds four specifications. `novae_env` runs the Novae fits and most plotting,
+`envs/` holds four specifications, and the NicheCompass and COZI builders live in their tool folders. `novae_env` runs the Novae fits and most plotting,
 `dotpy.yml` the deconvolution, `xenium_vistools.yml` the image overlays, and
 `rk_spatial_min.yml` the standalone clustering sweep. Set `PYTHONNOUSERSITE=1` in every job;
 a stale `~/.local` anndata shadowing the pinned stack has broken runs more than once.
