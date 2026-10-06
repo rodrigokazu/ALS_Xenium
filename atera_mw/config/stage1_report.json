@@ -1,0 +1,241 @@
+{
+ "tau": 3.495261925001447,
+ "crops": {
+  "spot1_purkinje_left": {
+   "pixel_acc_vs_10x": 0.9099482147724176,
+   "pixel_acc_vs_own": 0.9128917961297356,
+   "mean_conf_at_nuclei": 0.9080555504926936,
+   "calib": {
+    "0.0-0.5": [
+     0.5297709923664122,
+     655
+    ],
+    "0.5-0.7": [
+     0.6513119533527697,
+     1715
+    ],
+    "0.7-0.9": [
+     0.8461538461538461,
+     3081
+    ],
+    "0.9-1.0": [
+     0.7629083245521602,
+     949
+    ],
+    "1.0-1.0": [
+     0.9960652992884051,
+     11945
+    ]
+   },
+   "nuclei": 67,
+   "nucleus_agree_own_vs_10x": 0.8656716417910447,
+   "confusion_10x_rows_own_cols": {
+    "PC/interneuron": {
+     "PC/interneuron": 1,
+     "astro": 0,
+     "granule": 2,
+     "immune": 0,
+     "vascular": 0
+    },
+    "astro": {
+     "PC/interneuron": 0,
+     "astro": 25,
+     "granule": 0,
+     "immune": 0,
+     "vascular": 0
+    },
+    "granule": {
+     "PC/interneuron": 5,
+     "astro": 2,
+     "granule": 30,
+     "immune": 0,
+     "vascular": 0
+    },
+    "immune": {
+     "PC/interneuron": 0,
+     "astro": 0,
+     "granule": 0,
+     "immune": 1,
+     "vascular": 0
+    },
+    "vascular": {
+     "PC/interneuron": 0,
+     "astro": 0,
+     "granule": 0,
+     "immune": 0,
+     "vascular": 1
+    }
+   },
+   "tissue_frac_conf90": 0.4779764974082015,
+   "tissue_frac": 0.7343550701530612,
+   "median_inf_per_kernel": 154.34389516905085,
+   "type_area_frac": {
+    "granule": 0.2697370206529704,
+    "PC/interneuron": 0.17184574049447715,
+    "astro": 0.5213721605558119,
+    "oligo": 0.010747143593779684,
+    "vascular": 0.015360816348685103,
+    "immune": 0.010937118354275788
+   }
+  },
+  "spot2_gl_wm_centre": {
+   "pixel_acc_vs_10x": 0.8723918295629255,
+   "pixel_acc_vs_own": 0.9374405154110843,
+   "mean_conf_at_nuclei": 0.9049185875078529,
+   "calib": {
+    "0.0-0.5": [
+     0.2863187588152327,
+     709
+    ],
+    "0.5-0.7": [
+     0.4997355896351137,
+     1891
+    ],
+    "0.7-0.9": [
+     0.8138879097638351,
+     5674
+    ],
+    "0.9-1.0": [
+     0.8972288893737727,
+     9166
+    ],
+    "1.0-1.0": [
+     0.9963555375582102,
+     9878
+    ]
+   },
+   "nuclei": 118,
+   "nucleus_agree_own_vs_10x": 0.8559322033898306,
+   "confusion_10x_rows_own_cols": {
+    "PC/interneuron": {
+     "PC/interneuron": 3,
+     "astro": 1,
+     "granule": 0,
+     "immune": 0,
+     "oligo": 0,
+     "vascular": 0
+    },
+    "astro": {
+     "PC/interneuron": 0,
+     "astro": 15,
+     "granule": 0,
+     "immune": 0,
+     "oligo": 0,
+     "vascular": 0
+    },
+    "granule": {
+     "PC/interneuron": 4,
+     "astro": 5,
+     "granule": 77,
+     "immune": 1,
+     "oligo": 2,
+     "vascular": 1
+    },
+    "immune": {
+     "PC/interneuron": 0,
+     "astro": 0,
+     "granule": 1,
+     "immune": 1,
+     "oligo": 0,
+     "vascular": 0
+    },
+    "oligo": {
+     "PC/interneuron": 0,
+     "astro": 1,
+     "granule": 1,
+     "immune": 0,
+     "oligo": 5,
+     "vascular": 0
+    }
+   },
+   "tissue_frac_conf90": 0.5026411399417661,
+   "tissue_frac": 0.7734574298469388,
+   "median_inf_per_kernel": 163.14852671287522,
+   "type_area_frac": {
+    "granule": 0.6259888170269783,
+    "PC/interneuron": 0.06142904996263753,
+    "astro": 0.25097271251513825,
+    "oligo": 0.04617485634775439,
+    "vascular": 0.007652864026385632,
+    "immune": 0.007781700121105929
+   }
+  },
+  "spot3_purkinje_right": {
+   "pixel_acc_vs_10x": 0.9466089466089466,
+   "pixel_acc_vs_own": 0.9720234414111966,
+   "mean_conf_at_nuclei": 0.9211841421473664,
+   "calib": {
+    "0.0-0.5": [
+     0.397887323943662,
+     852
+    ],
+    "0.5-0.7": [
+     0.4890207715133531,
+     1685
+    ],
+    "0.7-0.9": [
+     0.9068512435476302,
+     4262
+    ],
+    "0.9-1.0": [
+     0.9979995120761161,
+     20495
+    ],
+    "1.0-1.0": [
+     0.9998499174546001,
+     6663
+    ]
+   },
+   "nuclei": 140,
+   "nucleus_agree_own_vs_10x": 0.9357142857142857,
+   "confusion_10x_rows_own_cols": {
+    "PC/interneuron": {
+     "PC/interneuron": 2,
+     "astro": 0,
+     "granule": 0,
+     "immune": 0,
+     "oligo": 0
+    },
+    "astro": {
+     "PC/interneuron": 0,
+     "astro": 11,
+     "granule": 1,
+     "immune": 0,
+     "oligo": 0
+    },
+    "granule": {
+     "PC/interneuron": 0,
+     "astro": 6,
+     "granule": 116,
+     "immune": 2,
+     "oligo": 0
+    },
+    "immune": {
+     "PC/interneuron": 0,
+     "astro": 0,
+     "granule": 0,
+     "immune": 1,
+     "oligo": 0
+    },
+    "oligo": {
+     "PC/interneuron": 0,
+     "astro": 0,
+     "granule": 0,
+     "immune": 0,
+     "oligo": 1
+    }
+   },
+   "tissue_frac_conf90": 0.5971032475124675,
+   "tissue_frac": 0.8352399553571429,
+   "median_inf_per_kernel": 170.04760027707508,
+   "type_area_frac": {
+    "granule": 0.7222315015867713,
+    "PC/interneuron": 0.056407931470567184,
+    "astro": 0.1922975971748312,
+    "oligo": 0.020926292681762867,
+    "vascular": 0.0,
+    "immune": 0.008136677086067431
+   }
+  }
+ }
+}
