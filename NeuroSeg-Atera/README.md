@@ -1,4 +1,8 @@
-# atera_mw: resegmentation and first analysis of the 10x Atera human cerebellum section
+# NeuroSeg-Atera: neuron-aware segmentation of the 10x Atera human cerebellum section
+
+NeuroSeg-Atera is our spinal-cord segmentation pipeline (NeuroSeg) adapted to whole-transcriptome Atera data: 18S plus
+transcript density for cell bodies, transcript identity to gate growth, and a repair step that keeps large neurons
+(Purkinje cells) whole.
 
 Handoff from Marcel, 6 October 2026. Everything here was run on Marcel's Mac (12 cores, 96 GB RAM) between 29 September and
 5 October 2026. The data lives on Marcel's external SSD; section 6 lists every output path and what to copy to SCG. The
@@ -33,7 +37,7 @@ script does, which numbers came out, what to trust and what not.
 ## 2. Folder layout
 
 ```
-atera_mw/
+NeuroSeg-Atera/
   README.md                this file
   METHODS.md               detailed methods (paper style), all parameters
   config/                  gene sets, whole-sample statistics, window coordinates, stage-1 calibration

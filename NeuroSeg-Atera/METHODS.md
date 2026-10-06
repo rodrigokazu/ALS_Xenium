@@ -1,7 +1,7 @@
-# Methods: segmentation and analysis of the Atera human cerebellum section
+# Methods: NeuroSeg-Atera, segmentation and analysis of the Atera human cerebellum section
 
 Written as a methods section; parameters are the ones used for the reported results. Script names refer to
-`atera_mw/scripts/`.
+`NeuroSeg-Atera/scripts/`.
 
 ## Data
 
